@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMBLEZ - Association of Computer Science and Engineering Students</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+        :root {
+            --dark-purple: #2D0A31;
+            --light-purple: #8E44AD;
+            --pink: #FF69B4;
+            --white: #FFFFFF;
+            --red: #FF4136;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--dark-purple);
+            color: var(--white);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .background-text {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            font-size: 15vw;
+            font-weight: bold;
+            opacity: 0.1;
+            color: var(--light-purple);
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .logo {
+            font-size: 4rem;
+            font-weight: bold;
+            color: var(--white);
+            text-shadow: 0 0 10px rgba(255,255,255,0.5);
+        }
+
+        .subtitle {
+            font-size: 1rem;
+            color: var(--light-purple);
+        }
+
+        .date {
+            font-size: 1.2rem;
+            color: var(--pink);
+            writing-mode: vertical-rl;
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .staff {
+            margin-top: 1rem;
+            font-size: 0.8rem;
+        }
+
+        .events {
+            margin-top: 2rem;
+        }
+
+        .event-title {
+            color: var(--red);
+            font-weight: bold;
+        }
+
+        .event-list {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .technical, .non-technical {
+            width: 48%;
+        }
+
+        .star {
+            color: var(--red);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="background-text">COMBLEZ COMBLEZ COMBLEZ</div>
+        <div class="date">SEPT 24 2024</div>
+        <header class="header">
+            <h1 class="logo">COMBLEZ</h1>
+            <p class="subtitle">- ASSOCIATION OF COMPUTER SCIENCE AND ENGINEERING STUDENTS -</p>
+            <div class="staff">
+                <p>CONVENOR - PROF M.NOORUNNISHA AP/CSE <span class="star">★</span> HOD/CSE PROF P.PAVALAKODI <span class="star">★</span> PRINCIPAL DR M. SHANMUGAPRIYA</p>
+                <p>SECRETARY DR M.A.MOHAMMED NIZAM <span class="star">★</span> JOINT SECRETARY MR M.AHMAR</p>
+            </div>
+        </header>
+        <section class="events">
+            <h2 class="event-title">EVENTZ</h2>
+            <div class="event-list">
+                <div class="technical">
+                    <h3>TECHNICAL</h3>
+                    <p>PAPER PRESENTATION, POSTER PRESENTATION, DEBUGGING, TECH QUIZ</p>
+                </div>
+                <div class="non-technical">
+                    <h3>NON - TECHNICAL</h3>
+                    <p>CONNECTIONS, DRAWING, CRAFTING, SHORT FILM</p>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

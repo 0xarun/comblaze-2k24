@@ -1,0 +1,601 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+:root {
+    --primary-color: #2D0A31;
+    --secondary-color: #8E44AD;
+    --accent-color: #FF4136;
+    --text-color: #FFFFFF;
+    --pink-color: #FF69B4;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+
+header {
+    background-color: rgba(45, 10, 49, 0.8);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 1rem 0;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--accent-color);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    transform: scaleX(1);
+}
+
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    text-align: center;
+    z-index: 2;
+}
+
+.college-logo {
+    width: 120px;
+    height: auto;
+    margin-bottom: 1rem;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+}
+
+.college-name {
+    font-size: 2rem;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.presents {
+    font-size: 1.2rem;
+    color: var(--pink-color);
+    margin-bottom: 1rem;
+}
+
+.event-title {
+    font-size: 6rem;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    margin-bottom: 1rem;
+    background: linear-gradient(45deg, var(--accent-color), var(--pink-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: glow 3s infinite;
+}
+
+.event-date {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.event-tagline {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+}
+
+.background-text,
+.background-text2,
+.background-text3 {
+    position: absolute;
+    font-size: 10vw;
+    font-weight: bold;
+    opacity: 0.05;
+    white-space: nowrap;
+    user-select: none;
+}
+
+.background-text {
+    top: 10%;
+    left: 10%;
+    transform: rotate(-30deg);
+}
+
+.background-text2 {
+    bottom: 10%;
+    right: 10%;
+    transform: rotate(-30deg);
+}
+
+.background-text3 {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-30deg);
+}
+
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    z-index: 1001;
+}
+
+.menu-icon span {
+    height: 3px;
+    width: 30px;
+    background-color: var(--text-color);
+    margin: 4px;
+    transition: all 0.3s ease;
+}
+
+
+#menu {
+    display: flex;
+}
+
+#menu.active {
+    display: block;
+}
+
+section {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h2 {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.event-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.event-category {
+    background: linear-gradient(135deg, rgba(142, 68, 173, 0.1), rgba(255, 65, 54, 0.1));
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.event-category:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(255, 65, 54, 0.2);
+}
+
+.event-category h3 {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.event-category ul {
+    list-style-type: none;
+}
+
+.event-category li {
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.event-category li::before {
+    content: '•';
+    color: var(--pink-color);
+    position: absolute;
+    left: 0;
+}
+
+#schedule {
+    background: linear-gradient(135deg, rgba(45, 10, 49, 0.8), rgba(142, 68, 173, 0.8));
+    border-radius: 20px;
+    padding: 3rem;
+    margin-top: 4rem;
+}
+
+#schedule h2 {
+    color: var(--text-color);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.schedule-grid {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 1rem;
+}
+
+.schedule-item {
+    display: contents;
+}
+
+.schedule-item span {
+    padding: 0.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.schedule-item:last-child span {
+    border-bottom: none;
+}
+
+.staff-grid, .coordinators-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.staff-member, .coordinator {
+    background-color: rgba(142, 68, 173, 0.1);
+    padding: 1.5rem;
+    border-radius: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.staff-member:hover, .coordinator:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(255, 65, 54, 0.2);
+}
+
+.staff-member h3, .coordinators-title {
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+
+.coordinators-title {
+    text-align: center;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: var(--secondary-color);
+}
+
+.registration-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.qr-code img {
+    max-width: 200px;
+    border: 2px solid var(--primary-color);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.qr-code img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.7);
+}
+
+.cta-button, .register-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: linear-gradient(45deg, var(--accent-color), var(--pink-color));
+    color: var(--text-color);
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-shadow: 0 5px 15px rgba(255, 65, 54, 0.3);
+}
+
+.cta-button:hover, .register-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(255, 65, 54, 0.5);
+}
+
+footer {
+    background-color: rgba(45, 10, 49, 0.8);
+    text-align: center;
+    padding: 2rem;
+    margin-top: 4rem;
+}
+
+.social-icons {
+    margin-top: 1rem;
+}
+
+.social-icons a {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    margin: 0 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--accent-color);
+    transform: scale(1.2);
+}
+
+@keyframes glow {
+    0%, 100% { text-shadow: 0 0 5px rgba(255, 255, 255, 0.5); }
+    50% { text-shadow: 0 0 20px rgba(255, 255, 255, 0.8); }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+.college-logo {
+    animation: float 5s ease-in-out infinite;
+    width: 10%;
+    height: 10%;
+    border-radius: 50%;
+}
+
+/* WhatsApp Icon Styling */
+.whatsapp-icon {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 1000;
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    border-radius: 50%;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-icon img {
+    width: 35px;
+    height: 35px;
+}
+
+.whatsapp-icon:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.35);
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+.countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 1rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.countdown-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(255, 65, 54, 0.3);
+}
+
+.countdown-item span {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    text-shadow: 0 0 10px rgba(255, 65, 54, 0.5);
+}
+
+.countdown-item p {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    margin-top: 0.5rem;
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.faq-item {
+    background: linear-gradient(135deg, rgba(142, 68, 173, 0.1), rgba(255, 65, 54, 0.1));
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.faq-question {
+    color: var(--accent-color);
+    padding: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+}
+
+.faq-question::after {
+    content: '+';
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-question::after {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 300px; /* Adjust this value if needed */
+}
+
+.faq-answer p {
+    padding: 0 1.5rem 1.5rem;
+    color: var(--text-color);
+}
+
+@media (max-width: 768px) {
+    .college-logo {
+        width: 20%;
+    }
+
+    .hero {
+        bottom: 60px;
+
+    }
+
+    .event-title {
+        font-size: 3rem;
+        letter-spacing: 5px;
+    }
+
+    .college-name {
+        font-size: 1.5rem;
+    }
+
+    .presents {
+        font-size: 1rem;
+    }
+
+    .event-date,
+    .event-tagline {
+        font-size: 1rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 0.5rem 0;
+    }
+
+    .event-category {
+        flex: 1 1 100%;
+    }
+
+    .schedule-grid {
+        grid-template-columns: 1fr;
+        padding: 1.5rem;
+
+    }
+
+    .staff-grid, .coordinators-grid {
+        grid-template-columns: 1fr;
+        padding: 1.5rem;
+
+    }
+
+    .menu-icon {
+        display: flex;
+    }
+    
+    #menu {
+        display: none;
+        flex-direction: column;
+    }
+    
+    #menu.active {
+        display: flex;
+    }
+
+    .countdown {
+        flex-wrap: wrap;
+    }
+
+    .countdown-item {
+        margin: 0.5rem;
+    }
+
+    .countdown-item span {
+        font-size: 2rem;
+    }
+
+    .countdown-item p {
+        font-size: 0.8rem;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--primary-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--secondary-color);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-color);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .event-title, .college-logo, h2 {
+        animation: none;
+    }
+
+    .cta-button:hover::before, .register-button:hover::before {
+        display: none;
+    }
+}
