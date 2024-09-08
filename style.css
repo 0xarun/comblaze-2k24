@@ -272,6 +272,12 @@ h2 {
     gap: 2rem;
 }
 
+.staff-member img {
+    width: 50%:
+    height: 50%:
+
+}
+
 .staff-member, .coordinator {
     background-color: rgba(142, 68, 173, 0.1);
     padding: 1.5rem;
