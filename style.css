@@ -427,14 +427,12 @@ footer {
 }
 
 /* WhatsApp Icon Styling */
-.whatsapp-icon {
+.whatsapp-icon, .instagram-icon {
     position: fixed;
     bottom: 20px;
-    left: 20px;
     z-index: 1000;
     width: 60px;
     height: 60px;
-    background-color: #25D366;
     border-radius: 50%;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
     display: flex;
@@ -443,12 +441,26 @@ footer {
     transition: transform 0.3s ease;
 }
 
-.whatsapp-icon img {
+.whatsapp-icon {
+    left: 20px;
+    background-color: #25D366;
+}
+
+.instagram-icon {
+    right: 20px;
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+
+.whatsapp-icon img, .instagram-icon img {
     width: 35px;
     height: 35px;
 }
 
-.whatsapp-icon:hover {
+.instagram-icon img {
+    filter: brightness(0) invert(1);
+}
+
+.whatsapp-icon:hover, .instagram-icon:hover {
     transform: scale(1.1);
     box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.35);
 }
@@ -661,6 +673,16 @@ footer {
 
     .countdown-item p {
         font-size: 0.8rem;
+    }
+    
+    .whatsapp-icon, .instagram-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .whatsapp-icon img, .instagram-icon img {
+        width: 30px;
+        height: 30px;
     }
 }
 
