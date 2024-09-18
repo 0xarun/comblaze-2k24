@@ -67,24 +67,29 @@ nav ul li a:hover::after {
 }
 
 .hero {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
     overflow: hidden;
+    padding-top: 80px; /* Add space for the fixed header */
 }
 
 .hero-content {
     text-align: center;
     z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .college-logo {
     width: 120px;
-    height: auto;
-    margin-top: 2rem;
+    height: 120px;
+    object-fit: contain;
+    margin-bottom: 1rem;
     filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+    animation: float 5s ease-in-out infinite;
 }
 
 .college-name {
@@ -394,6 +399,33 @@ footer {
     border-radius: 50%;
 }
 
+.media-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.event-poster, .dept-photo {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+}
+
+.event-poster img, .dept-photo img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-poster img:hover, .dept-photo img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
 /* WhatsApp Icon Styling */
 .whatsapp-icon {
     position: fixed;
@@ -507,13 +539,13 @@ footer {
 }
 
 @media (max-width: 768px) {
-    .college-logo {
-        width: 20%;
+     .hero {
+        padding-top: 60px;
     }
 
-    .hero {
-        bottom: 20px;
-
+    .college-logo {
+        width: 80px;
+        height: 80px;
     }
 
     .event-title {
@@ -537,10 +569,53 @@ footer {
     nav ul {
         flex-direction: column;
         align-items: center;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: rgba(45, 10, 49, 0.95);
+        padding: 1rem 0;
+        display: none;
+    }
+
+    nav ul.active {
+        display: flex;
     }
 
     nav ul li {
         margin: 0.5rem 0;
+    }
+
+    .menu-icon {
+        display: flex;
+    }
+
+    .event-category, .staff-member, .coordinator {
+        flex: 1 1 100%;
+    }
+
+    .schedule-grid, .staff-grid, .coordinators-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .countdown {
+        flex-wrap: wrap;
+    }
+
+    .countdown-item {
+        margin: 0.5rem;
+    }
+
+    .countdown-item span {
+        font-size: 2rem;
+    }
+
+    .countdown-item p {
+        font-size: 0.8rem;
+    }
+
+    .event-poster, .dept-photo {
+        min-width: 100%;
     }
 
     .event-category {
